@@ -1,0 +1,13 @@
+{
+  "tracker": {
+    "polling": {
+      "averageInterval": 7200
+    },
+    "requests": {
+      "backoff": {
+        "min": 3,
+        "max": 15
+      }
+    }
+  }
+}
