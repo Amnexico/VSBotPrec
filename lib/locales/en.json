@@ -1,0 +1,78 @@
+// =============================================================================
+// lib/locales/en.json - English
+// =============================================================================
+{
+  "welcome": {
+    "title": "*Welcome to VacuumSpain*",
+    "description": "Start saving money by tracking Amazon products and receive price and availability alerts according to your preferences.",
+    "commands_title": "_Commands_",
+    "track_command": "/track - track a new product",
+    "list_command": "/list - manage your products", 
+    "language_command": "/language - change language"
+  },
+  "scenes": {
+    "add_product": {
+      "ask_name": "What's the name of the product?",
+      "name_exists": "You already have a product with the same name. Please choose another one or use /exit to leave.",
+      "ask_url": "Insert the URL or share the product with Pricegram from the Amazon app",
+      "invalid_url": "This is not a valid URL, please try again or use /exit to leave.",
+      "invalid_amazon": "This is not a valid Amazon product, please try again or use /exit to leave.",
+      "retrieving_info": "Retrieving product info...",
+      "success": "Your product is being tracked 🎉",
+      "aborted": "The operation was aborted."
+    },
+    "set_target_price": {
+      "ask_price": "What's your target price for {productName}?",
+      "invalid_price": "Invalid price. Please enter a valid number.",
+      "success": "Target price set: {price} {currency}",
+      "aborted": "Operation cancelled."
+    }
+  },
+  "commands": {
+    "list": {
+      "choose": "Choose a product from the list below:",
+      "empty": "Your product list is empty.\n\nUse /track to add products."
+    },
+    "language": {
+      "current": "🌍 Current language: {language}",
+      "choose": "Choose your preferred language:",
+      "changed": "✅ Language changed to {language}"
+    }
+  },
+  "actions": {
+    "menu": {
+      "product_info": "📦 {name}\n💰 Price: {price}\n🎯 Target: {target}\n📊 Availability: {availability}",
+      "choose_action": "What do you want to do?"
+    },
+    "remove": {
+      "confirm": "Are you sure you want to remove '{productName}'?",
+      "success": "✅ Product '{productName}' removed successfully.",
+      "error": "❌ Error removing product."
+    }
+  },
+  "buttons": {
+    "set_target": "🎯 Set target price",
+    "toggle_alerts": "🔔 Toggle alerts",
+    "remove": "🗑️ Remove product",
+    "back": "⬅️ Back",
+    "confirm": "✅ Confirm",
+    "cancel": "❌ Cancel",
+    "languages": {
+      "spanish": "🇪🇸 Español",
+      "english": "🇺🇸 English",
+      "french": "🇫🇷 Français", 
+      "german": "🇩🇪 Deutsch"
+    }
+  },
+  "alerts": {
+    "price_drop": "📉 Price drop!\n\n📦 {name}\n💰 Previous price: {oldPrice} {currency}\n💰 Current price: {newPrice} {currency}\n💰 Savings: {savings} {currency}",
+    "price_increase": "📈 Price increase\n\n📦 {name}\n💰 Previous price: {oldPrice} {currency}\n💰 Current price: {newPrice} {currency}",
+    "availability_change": "📦 Availability change\n\n📦 {name}\n📊 Status: {availability}",
+    "check_link": "Check here!"
+  },
+  "errors": {
+    "generic": "❌ An error occurred. Please try again.",
+    "product_not_found": "❌ Product not found.",
+    "invalid_operation": "❌ Invalid operation."
+  }
+}
