@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AleG94/Pricegram.git"
+    "url": "git+https://github.com/Amnexico/VSBotPrec.git"
   },
   "keywords": [
     "telegram",
@@ -24,15 +24,14 @@
   "author": "Alessandro Genovese",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AleG94/Pricegram/issues"
+    "url": "https://github.com/Amnexico/VSBotPrec/issues"
   },
-  "homepage": "https://github.com/AleG94/Pricegram#readme",
+  "homepage": "https://github.com/Amnexico/VSBotPrec#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.6",
     "config": "^3.3.6",
     "currency-symbols": "^0.4.1",
     "dotenv-cli": "^4.0.0",
-    "paapi5-nodejs-sdk": "^1.0.0",
     "extract-domain": "^2.2.1",
     "log4js": "^6.3.0",
     "mongoose": "^5.12.4",
@@ -45,4 +44,3 @@
     "nodemon": "^2.0.7"
   }
 }
-
