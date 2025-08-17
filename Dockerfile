@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:18-bullseye
 
 WORKDIR /usr/src/app
 
@@ -10,3 +10,4 @@ RUN npm ci --only=production
 COPY . .
 
 CMD [ "npm", "start" ]
+
