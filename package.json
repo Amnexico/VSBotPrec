@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "eslint --ignore-path .gitignore . --fix"
+    "setup-locales": "mkdir -p lib/locales && echo 'Locales directory created'"
   },
   "repository": {
     "type": "git",
@@ -47,3 +48,4 @@
     "nodemon": "^2.0.7"
   }
 }
+
