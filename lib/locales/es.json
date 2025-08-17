@@ -1,0 +1,78 @@
+// =============================================================================
+// lib/locales/es.json - Español
+// =============================================================================
+{
+  "welcome": {
+    "title": "*Bienvenido a Radar de Ofertas y Chollos*",
+    "description": "Empieza a ahorrar dinero rastreando productos de Amazon y recibe alertas de precio y disponibilidad según tus preferencias.",
+    "commands_title": "_Comandos_",
+    "track_command": "/track - rastrear un nuevo producto",
+    "list_command": "/list - gestionar tus productos",
+    "language_command": "/language - cambiar idioma"
+  },
+  "scenes": {
+    "add_product": {
+      "ask_name": "¿Cuál es el nombre del producto?",
+      "name_exists": "Ya tienes un producto con el mismo nombre. Por favor elige otro o usa /exit para salir.",
+      "ask_url": "Inserta la URL o comparte el producto con Pricegram desde la app de Amazon",
+      "invalid_url": "Esta no es una URL válida, por favor inténtalo de nuevo o usa /exit para salir.",
+      "invalid_amazon": "Este no es un producto válido de Amazon, por favor inténtalo de nuevo o usa /exit para salir.",
+      "retrieving_info": "Obteniendo información del producto...",
+      "success": "Tu producto está siendo rastreado 🎉",
+      "aborted": "La operación fue cancelada."
+    },
+    "set_target_price": {
+      "ask_price": "¿Cuál es tu precio objetivo para {productName}?",
+      "invalid_price": "Precio inválido. Por favor introduce un número válido.",
+      "success": "Precio objetivo establecido: {price} {currency}",
+      "aborted": "Operación cancelada."
+    }
+  },
+  "commands": {
+    "list": {
+      "choose": "Elige un producto de la lista de abajo:",
+      "empty": "Tu lista de productos está vacía.\n\nUsa /track para agregar productos."
+    },
+    "language": {
+      "current": "🌍 Idioma actual: {language}",
+      "choose": "Elige tu idioma preferido:",
+      "changed": "✅ Idioma cambiado a {language}"
+    }
+  },
+  "actions": {
+    "menu": {
+      "product_info": "📦 {name}\n💰 Precio: {price}\n🎯 Objetivo: {target}\n📊 Disponibilidad: {availability}",
+      "choose_action": "¿Qué quieres hacer?"
+    },
+    "remove": {
+      "confirm": "¿Estás seguro de que quieres eliminar '{productName}'?",
+      "success": "✅ Producto '{productName}' eliminado exitosamente.",
+      "error": "❌ Error al eliminar el producto."
+    }
+  },
+  "buttons": {
+    "set_target": "🎯 Establecer precio objetivo",
+    "toggle_alerts": "🔔 Activar/Desactivar alertas",
+    "remove": "🗑️ Eliminar producto",
+    "back": "⬅️ Volver",
+    "confirm": "✅ Confirmar",
+    "cancel": "❌ Cancelar",
+    "languages": {
+      "spanish": "🇪🇸 Español",
+      "english": "🇺🇸 English",
+      "french": "🇫🇷 Français",
+      "german": "🇩🇪 Deutsch"
+    }
+  },
+  "alerts": {
+    "price_drop": "📉 ¡Bajada de precio!\n\n📦 {name}\n💰 Precio anterior: {oldPrice} {currency}\n💰 Precio actual: {newPrice} {currency}\n💰 Ahorro: {savings} {currency}",
+    "price_increase": "📈 Subida de precio\n\n📦 {name}\n💰 Precio anterior: {oldPrice} {currency}\n💰 Precio actual: {newPrice} {currency}",
+    "availability_change": "📦 Cambio de disponibilidad\n\n📦 {name}\n📊 Estado: {availability}",
+    "check_link": "Ver producto"
+  },
+  "errors": {
+    "generic": "❌ Ha ocurrido un error. Inténtalo de nuevo.",
+    "product_not_found": "❌ Producto no encontrado.",
+    "invalid_operation": "❌ Operación no válida."
+  }
+}
