@@ -1,3 +1,2 @@
-"scripts": {
-  "postinstall": "./install.sh"
-}
+#!/bin/bash
+npm install --production
