@@ -1,1 +1,3 @@
-
+"scripts": {
+  "postinstall": "./install.sh"
+}
