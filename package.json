@@ -9,7 +9,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "eslint --ignore-path .gitignore . --fix"
-    "postinstall": "./install.sh"
   },
   "repository": {
     "type": "git",
@@ -46,6 +45,7 @@
     "nodemon": "^2.0.7"
   }
 }
+
 
 
 
