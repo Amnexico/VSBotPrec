@@ -16,9 +16,17 @@ database.connect(mongoConnectionURI).then(() => {
   priceTracker.start();
 
   priceTracker.on('update', product => {
-    bot.sendMessage(product.user, new Alert(product).toMarkdown());
-    logger.info(`Alert sent: ${product.name} (${product.id})`);
-  });
-
-  logger.info('Pricegram started...');
+  const alert = new Alert(product).toMarkdown();
+  
+  if (alert.extra) {
+    // Mensaje con botón inline
+    bot.sendMessage(product.user, alert.text, alert.extra);
+  } else {
+    // Mensaje simple
+    bot.sendMessage(product.user, alert);
+  }
+  
+  logger.info(`Alert sent: ${product.name} (${product.id})`);
 });
+
+
