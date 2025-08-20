@@ -26,3 +26,4 @@ database.connect(mongoConnectionURI).then(() => {
   
   logger.info('Pricegram started...');
 });
+
