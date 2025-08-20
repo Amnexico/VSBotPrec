@@ -24,6 +24,7 @@ database.connect(mongoConnectionURI).then(() => {
     logger.info(`Alert sent: ${product.name} (${product.id})`);
   });
   
-  logger.info('Pricegram started...');
+  logger.info('VS PrecioBot started...');
 });
+
 
