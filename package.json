@@ -1,52 +1,46 @@
 {
-  "name": "pricegram",
-  "version": "0.4.0",
-  "description": "A Telegram bot that tracks Amazon products and sends alerts about price and availabilty changes.",
-  "main": "app.js",
-  "scripts": {
-    "start": "node -r dotenv/config app.js",
-    "dev": "nodemon -r dotenv/config app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ignore-path .gitignore .",
-    "lint:fix": "eslint --ignore-path .gitignore . --fix"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Amnexico/VSBotPrec.git"
-  },
-  "keywords": [
-    "telegram",
-    "bot",
-    "price",
-    "tracker",
-    "amazon"
-  ],
-  "author": "Alessandro Genovese",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Amnexico/VSBotPrec/issues"
-  },
-  "homepage": "https://github.com/Amnexico/VSBotPrec#readme",
-  "dependencies": {
-    "aws4": "^1.12.0",
-    "cheerio": "^1.0.0-rc.6",
-    "config": "^3.3.6",
-    "currency-symbols": "^0.4.1",
-    "dotenv-cli": "^4.0.0",
-    "extract-domain": "^2.2.1",
-    "log4js": "^6.3.0",
-    "mongoose": "^5.12.4",
-    "parse-money": "^1.0.12",
-    "telegraf": "^4.3.0",
-    "telegraf-session-local": "^2.1.0"
-  },
-  "devDependencies": {
-    "eslint": "^7.24.0",
-    "nodemon": "^2.0.7"
-  }
+ "name": "VS PrecioBot",
+ "version": "0.4.0",
+ "description": "Tu asistente inteligente que te avisa de bajadas de precio en Amazon y guarda el historial y estadísticas de cada producto.",
+ "main": "app.js",
+ "scripts": {
+   "start": "node -r dotenv/config app.js",
+   "dev": "nodemon -r dotenv/config app.js",
+   "test": "echo \"Error: no test specified\" && exit 1",
+   "lint": "eslint --ignore-path .gitignore .",
+   "lint:fix": "eslint --ignore-path .gitignore . --fix"
+ },
+ "repository": {
+   "type": "git",
+   "url": "git+https://github.com/Amnexico/VSBotPrec.git"
+ },
+ "keywords": [
+   "telegram",
+   "bot",
+   "price",
+   "tracker",
+   "amazon"
+ ],
+ "license": "MIT",
+ "bugs": {
+   "url": "https://github.com/Amnexico/VSBotPrec/issues"
+ },
+ "homepage": "https://github.com/Amnexico/VSBotPrec#readme",
+ "dependencies": {
+   "aws4": "^1.12.0",
+   "cheerio": "^1.0.0-rc.6",
+   "config": "^3.3.6",
+   "currency-symbols": "^0.4.1",
+   "dotenv-cli": "^4.0.0",
+   "extract-domain": "^2.2.1",
+   "log4js": "^6.3.0",
+   "mongoose": "^5.12.4",
+   "parse-money": "^1.0.12",
+   "telegraf": "^4.3.0",
+   "telegraf-session-local": "^2.1.0"
+ },
+ "devDependencies": {
+   "eslint": "^7.24.0",
+   "nodemon": "^2.0.7"
+ }
 }
-
-
-
-
-
