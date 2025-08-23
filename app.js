@@ -59,6 +59,28 @@ database.connect(mongoConnectionURI).then(async () => {
     }
   });
   
+  // Cron job para stats diarias (cada día a las 00:05)
+  cron.schedule('5 0 * * *', async () => {
+    console.log('🔄 Actualizando stats diarias...');
+    
+    try {
+      // Actualizar stats del sistema
+      await AnalyticsService.updateDailyStats();
+      
+      // Actualizar segmentación de usuarios
+      const { UserStats } = require('./lib/models');
+      const users = await UserStats.find({}).select('userId');
+      
+      for (const user of users) {
+        await AnalyticsService.updateUserSegmentation(user.userId);
+      }
+      
+      logger.info('📊 Stats diarias actualizadas exitosamente');
+    } catch (error) {
+      logger.error('❌ Error actualizando stats diarias:', error);
+    }
+  });
+  
   logger.info('🚀 VS PrecioBot con Analytics System started...');
   
   // Log de confirmación del sistema analytics
