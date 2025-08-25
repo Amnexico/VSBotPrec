@@ -26,7 +26,7 @@ database.connect(mongoConnectionURI).then(async () => {
       product.preferences?.alertType || 'percentage'
     );
     
-    const alert = new Alert(product).toMarkdown();
+    const alert = await new Alert(product).toMarkdown();
     
     if (alert.extra) {
       bot.sendMessage(product.user, alert.text, alert.extra);
@@ -35,28 +35,6 @@ database.connect(mongoConnectionURI).then(async () => {
     }
     
     logger.info(`Alert sent: ${product.name} (${product.id}) - Analytics tracked`);
-  });
-  
-  // Cron job para stats diarias (cada día a las 00:05)
-  cron.schedule('5 0 * * *', async () => {
-    console.log('🔄 Actualizando stats diarias...');
-    
-    try {
-      // Actualizar stats del sistema
-      await AnalyticsService.updateDailyStats();
-      
-      // Actualizar segmentación de usuarios
-      const { UserStats } = require('./lib/models');
-      const users = await UserStats.find({}).select('userId');
-      
-      for (const user of users) {
-        await AnalyticsService.updateUserSegmentation(user.userId);
-      }
-      
-      logger.info('📊 Stats diarias actualizadas exitosamente');
-    } catch (error) {
-      logger.error('❌ Error actualizando stats diarias:', error);
-    }
   });
   
   // Cron job para stats diarias (cada día a las 00:05)
@@ -93,7 +71,6 @@ database.connect(mongoConnectionURI).then(async () => {
 ✅ Tracking de API calls
 ✅ Cron job de stats diarias
 ✅ Comandos admin disponibles
-
 👑 Admin ID: ${AnalyticsService.ADMIN_ID}
 🕰️ Stats diarias: 00:05 UTC
 💰 Sistema optimizado para comisiones
