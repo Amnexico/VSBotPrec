@@ -3,7 +3,6 @@ const config = require('config');
 const logger = require('./lib/logger')();
 const database = require('./lib/database');
 const Bot = require('./lib/bot');
-const PriceTracker = require('./lib/price-tracker'); // CAMBIO: Importar clase
 const Alert = require('./lib/templates/alert');
 // Analytics imports
 const AnalyticsService = require('./lib/services/analytics-service');
@@ -16,8 +15,9 @@ const bot = new Bot(telegramBotToken);
 database.connect(mongoConnectionURI).then(async () => {
   bot.launch();
   
-  // CAMBIO: Crear instancia del price tracker con el bot
-  const priceTracker = new PriceTracker(bot);
+  // Configurar price tracker
+  const priceTracker = require('./lib/price-tracker');
+  priceTracker.setBotInstance(bot);
   priceTracker.start();
   
   priceTracker.on('update', async product => {
@@ -40,7 +40,7 @@ database.connect(mongoConnectionURI).then(async () => {
   });
   
   // Cron job para stats diarias (cada día a las 00:05)
-  cron.schedule('5 0 * * *', async () => {
+  cron.schedule('5 0 * * *', async () => {  // CORREGIDO: 5 asteriscos
     console.log('🔄 Actualizando stats diarias...');
     
     try {
