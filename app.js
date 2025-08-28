@@ -3,9 +3,8 @@ const config = require('config');
 const logger = require('./lib/logger')();
 const database = require('./lib/database');
 const Bot = require('./lib/bot');
-const priceTracker = require('./lib/price-tracker');
+const PriceTracker = require('./lib/price-tracker'); // CAMBIO: Importar clase
 const Alert = require('./lib/templates/alert');
-
 // Analytics imports
 const AnalyticsService = require('./lib/services/analytics-service');
 const cron = require('node-cron');
@@ -16,6 +15,9 @@ const bot = new Bot(telegramBotToken);
 
 database.connect(mongoConnectionURI).then(async () => {
   bot.launch();
+  
+  // CAMBIO: Crear instancia del price tracker con el bot
+  const priceTracker = new PriceTracker(bot);
   priceTracker.start();
   
   priceTracker.on('update', async product => {
@@ -59,20 +61,23 @@ database.connect(mongoConnectionURI).then(async () => {
     }
   });
   
-  logger.info('🚀 VS PrecioBot con Analytics System started...');
+  logger.info('🚀 VS PrecioBot con Analytics System + Ofertas Automáticas iniciado...');
   
-  // Log de confirmación del sistema analytics
+  // Log de confirmación del sistema analytics + ofertas
   console.log(`
-📊 SISTEMA ANALYTICS ACTIVO
-============================
+📊 SISTEMA ANALYTICS + OFERTAS AUTOMÁTICAS ACTIVO
+================================================
 ✅ Tracking automático de usuarios
 ✅ Tracking de alertas enviadas  
 ✅ Tracking de productos añadidos
 ✅ Tracking de API calls
 ✅ Cron job de stats diarias
 ✅ Comandos admin disponibles
+🤖 Sistema de ofertas automáticas para robots aspiradores
+📢 Publicación en @vacuumspain y @vacuumspain_ofertas
+🎯 Control inteligente de duplicados (regla del 2%)
 👑 Admin ID: ${AnalyticsService.ADMIN_ID}
 🕰️ Stats diarias: 00:05 UTC
-💰 Sistema optimizado para comisiones
+💰 Sistema optimizado para comisiones + afiliación
   `);
 });
