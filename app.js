@@ -12,6 +12,9 @@ const mongoConnectionURI = config.get('mongo.connectionURI');
 const telegramBotToken = config.get('telegram.token');
 const bot = new Bot(telegramBotToken);
 
+// IMPORTANTE: Establecer la instancia del bot globalmente
+Bot.setBotInstance(bot);
+
 database.connect(mongoConnectionURI).then(async () => {
   bot.launch();
   
@@ -81,3 +84,4 @@ database.connect(mongoConnectionURI).then(async () => {
 💰 Sistema optimizado para comisiones + afiliación
   `);
 });
+
