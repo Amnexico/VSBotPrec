@@ -64,7 +64,7 @@ database.connect(mongoConnectionURI).then(async () => {
     }
   });
   
-  logger.info('🚀 VS PrecioBot con Analytics System + Ofertas Automáticas iniciado...');
+  logger.info('🚀 OFERTRÓN con Analytics System + Ofertas Automáticas iniciado...');
   
   // Log de confirmación del sistema analytics + ofertas
   console.log(`
@@ -84,4 +84,5 @@ database.connect(mongoConnectionURI).then(async () => {
 💰 Sistema optimizado para comisiones + afiliación
   `);
 });
+
 
