@@ -1,5 +1,5 @@
 {
-  "name": "VS PrecioBot",
+  "name": "OFERTRÓN",
   "version": "0.4.0",
   "description": "Tu asistente inteligente que te avisa de bajadas de precio en Amazon y guarda el historial y estadísticas de cada producto.",
   "main": "app.js",
@@ -45,5 +45,6 @@
     "nodemon": "^2.0.7"
   }
 }
+
 
 
